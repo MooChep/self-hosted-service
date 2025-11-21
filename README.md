@@ -63,6 +63,19 @@ Démarrage du service
 ### Script backup.sh 
 
 Sauvegarde des fichiers Actual dans un dossier protégé. 
+Tout d’abord, il faudra enregistrer le mot de passe que vous souhaitez mettre pour votre fichier backup dans /var/restic_password pour que le script s’exécute correctement 
+ 
+- Initialisation d’un dépôt restic 
+- Sauvegarde du fichier actual 
+- Vérification de la sauvegarde du fichier 
+
+Pour pouvoir récupérer le backup, il faut : 
+
+Créer un dossier sauvegarde : mkdir ~/sauvegarde 
+
+Récupérer les données et les mettre dans le dossier sauvegarde : 
+
+restic -r [chemin dépôt restic] mount ~/sauvegarde 
 
 ### Script security.sh 
 
