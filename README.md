@@ -63,11 +63,15 @@ Démarrage du service
 ### Script backup.sh 
 
 Sauvegarde des fichiers Actual dans un dossier protégé. 
-Tout d’abord, il faudra enregistrer le mot de passe que vous souhaitez mettre pour votre fichier backup dans /var/restic_password pour que le script s’exécute correctement 
- 
+
+- Création d’un fichier /var/restic_password pour le mot de passe du dépôt 
 - Initialisation d’un dépôt restic 
 - Sauvegarde du fichier actual 
 - Vérification de la sauvegarde du fichier 
+
+Pour que cron exécute le code backup.sh toutes les heures, on exécute le code backup_recurent.sh :
+
+- Création d'un cron avec 0 0 1 * * ~/backup.sh à mettre à l'intérieur
 
 Pour pouvoir récupérer le backup, il faut : 
 
