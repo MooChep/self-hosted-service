@@ -1,8 +1,10 @@
 #!/bin/bash 
 set -e
-sudo restic -r /actual init
 
+echo code > /var/restic_password
 
-sudo restic -r /actual backup .
+restic -r /tmp/restic-repo init -p /var/restic_password
 
-sudo restic -r /actual snapshots
+restic -r /tmp/restic-repo backup ~/actual -p /var/restic_password
+
+restic -r /tmp/restic-repo snapshots -p /var/restic_password
